@@ -19,7 +19,7 @@ const data = () => {
   }; 
   useEffect(()=>{
     getData();
-  })
+  }, [])
   return (
     <View>
       <Text>alquran</Text>
@@ -27,7 +27,7 @@ const data = () => {
           {dataQuran?.map((data, index) => {
             return (
               <TouchableOpacity 
-              onPress={() => navigateToDetails(1)}
+              onPress={() => navigateToDetails(data.nomor)}
               style={styles.boxData}
               key={index}>
                 <Text style={styles.data}>

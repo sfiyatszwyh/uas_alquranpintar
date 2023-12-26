@@ -1,11 +1,11 @@
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 
 
 export default function Details ({route}) {
     const {id} = route.params;
-    const [data, setData] = useState({})
+    const [dataQuran, setData] = useState(null)
 
     const navigation = useNavigation()
     useEffect(() => {
@@ -22,14 +22,36 @@ export default function Details ({route}) {
         
     }
   return (
+   
     <ScrollView>
         <Text>Detail Product </Text>
-        {
-           
-        }
         <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text>Back</Text>
         </TouchableOpacity>
+          {dataQuran?.map((data, index) => {
+            return (
+              <View 
+              style={styles.boxData}
+              key={index}>
+                <Text style={styles.data}>
+                {data.ar}  {data.nomor}
+                </Text>
+                <Text style={styles.data}>
+                {data.id}
+                </Text>
+              </View>   
+            );
+          })}
     </ScrollView>
   )
 }
+
+const styles = StyleSheet.create({
+    data: {
+      fontSize: 21,
+      fontWeight: 'bold'
+    },
+    boxData: {
+      borderWidth: 1,
+    }
+  })
