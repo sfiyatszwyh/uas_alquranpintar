@@ -1,17 +1,22 @@
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React, {useState, useEffect} from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 const data = () => {
+  const navigations = useNavigation ()
   const [dataQuran, setDataQuran] = useState(null);
   const getData = async () => {
     try{
-      const respon = await fetch ('https://equran.id/api/v2/surat');
+      const respon = await fetch ('https://api.npoint.io/99c279bb173a6e28359c/data');
       const hasil = await respon.json();
-      setDataQuran(hasil.data);
+      setDataQuran(hasil);
     }catch(error){
       console.log(error);
     }
   };
+  const navigateToDetails = (id) => {
+    navigations.navigate('details', { id });
+  }; 
   useEffect(()=>{
     getData();
   })
@@ -21,11 +26,12 @@ const data = () => {
       <ScrollView>
           {dataQuran?.map((data, index) => {
             return (
-              <TouchableOpacity
+              <TouchableOpacity 
+              onPress={() => navigateToDetails(1)}
               style={styles.boxData}
               key={index}>
                 <Text style={styles.data}>
-                {data.nomor} - {data.nama}
+                {data.nomor} {data.asma}
                 </Text>
               </TouchableOpacity>   
             );
