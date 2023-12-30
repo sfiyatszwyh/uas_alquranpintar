@@ -21,18 +21,22 @@ const data = () => {
     getData();
   }, [])
   return (
-    <View>
-      <Text>alquran</Text>
+    <View style={{ flex: 1, backgroundColor: 'white', padding:15}}>
+      <Text style={{ textAlign:'center'}}>Al-Quran Pintar</Text>
       <ScrollView>
           {dataQuran?.map((data, index) => {
             return (
               <TouchableOpacity 
               onPress={() => navigateToDetails(data.nomor)}
-              style={styles.boxData}
               key={index}>
-                <Text style={styles.data}>
-                {data.nomor} {data.asma}
-                </Text>
+                <View style={{ flexDirection:'row'}}>
+                  <Text>{data.nomor} </Text>
+                  <Text>{data.nama}</Text>
+                </View>
+                <View style={{ flexDirection:'row'}}>
+                  <Text>{data.type} | {data.ayat} Ayat</Text>
+                  <Text style={{ textAlign:'right', marginLeft:'auto'}}>{data.asma}</Text>
+                </View>
               </TouchableOpacity>   
             );
           })}
@@ -43,12 +47,3 @@ const data = () => {
 
 export default data
 
-const styles = StyleSheet.create({
-  data: {
-    fontSize: 21,
-    fontWeight: 'bold'
-  },
-  boxData: {
-    borderWidth: 1,
-  }
-})

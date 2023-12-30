@@ -1,7 +1,7 @@
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet,Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function Details ({route}) {
     const {id} = route.params;
@@ -22,19 +22,26 @@ export default function Details ({route}) {
         
     }
   return (
-   
-    <ScrollView>
-        <Text>Detail Product </Text>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text>Back</Text>
+   <View style={{ flex: 1, backgroundColor: 'white', padding:15}}>
+    <ScrollView >
+      <View style={{ flexDirection:'row'}}>
+        <TouchableOpacity style={{ flexDirection:'row'}} onPress={() => navigation.goBack()}>
+            <Image source={require('../images/back.png')} style={{width:20, height:20}}/>
+            <Text >Back</Text>
         </TouchableOpacity>
+        <Text style={{ textAlign:'center', marginLeft:'auto'}}>Detail Product </Text>
+      </View>
+        
           {dataQuran?.map((data, index) => {
             return (
               <View 
               style={styles.boxData}
               key={index}>
                 <Text style={styles.data}>
-                {data.ar}  {data.nomor}
+               {data.nomor}
+                </Text>
+                <Text style={styles.data}>
+                {data.ar} 
                 </Text>
                 <Text style={styles.data}>
                 {data.id}
@@ -42,9 +49,13 @@ export default function Details ({route}) {
               </View>   
             );
           })}
-    </ScrollView>
+    </ScrollView> 
+   </View>
+    
   )
 }
+
+
 
 const styles = StyleSheet.create({
     data: {
