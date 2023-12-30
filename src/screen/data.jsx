@@ -29,13 +29,26 @@ const data = () => {
               <TouchableOpacity 
               onPress={() => navigateToDetails(data.nomor)}
               key={index}>
-                <View style={{ flexDirection:'row'}}>
-                  <Text>{data.nomor} </Text>
-                  <Text>{data.nama}</Text>
-                </View>
-                <View style={{ flexDirection:'row'}}>
-                  <Text>{data.type} | {data.ayat} Ayat</Text>
-                  <Text style={{ textAlign:'right', marginLeft:'auto'}}>{data.asma}</Text>
+                <View style= {{ backgroundColor: '#FFFDD0',
+                                borderRadius: 10,
+                                marginVertical: 10,
+                                padding: 20,
+                                shadowColor: '#000',
+                                shadowOffset: {
+                                    width: 0,
+                                    height: 2,
+                                },
+                                shadowOpacity: 0.3,
+                                shadowRadius: 4,
+                                elevation: 5, }}>
+                    <View style={{ flexDirection:'row'}}>
+                      <Text>{data.nomor} </Text>
+                      <Text>{data.nama}</Text>
+                    </View>
+                    <View style={{ flexDirection:'row'}}>
+                      <Text>{data.type} | {data.ayat} Ayat</Text>
+                      <Text style={{ textAlign:'right', marginLeft:'auto'}}>{data.asma}</Text>
+                    </View>
                 </View>
               </TouchableOpacity>   
             );
