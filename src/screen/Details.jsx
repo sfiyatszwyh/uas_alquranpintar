@@ -29,7 +29,7 @@ export default function Details ({route}) {
             <Image source={require('../images/back.png')} style={{width:20, height:20}}/>
             <Text >Back</Text>
         </TouchableOpacity>
-        <Text style={{ textAlign:'center', marginLeft:'auto'}}>Detail Product </Text>
+        <Text style={{ textAlign:'center', marginLeft:'auto'}}>Surah</Text>
       </View>
         
           {dataQuran?.map((data, index) => {
