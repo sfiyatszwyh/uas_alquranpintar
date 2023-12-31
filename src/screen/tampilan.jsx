@@ -13,24 +13,18 @@ const tampilan = ({ navigation }) => {
     }, [navigation]);
 
     return (
-        <View style={styles.container}>
-            <Image style={styles.image} source={require('../images/logo.png')} />
-            <Text>Al-Quran Pintar</Text>
+        <View style={{ backgroundColor: 'white',
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center' }}>
+            <Image style={{ width: 130,
+                            height: 130,
+                            resizeMode: 'contain', }} source={require('../images/logo.png')} />
+            <Text style={{ fontSize: 12,  }}>Al-Quran Pintar</Text>
         </View>
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    image: {
-        width: 130,
-        height: 130,
-        resizeMode: 'contain',
-    },
-});
+
 
 export default tampilan;

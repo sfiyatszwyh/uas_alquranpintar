@@ -41,12 +41,12 @@ const data = () => {
                                 shadowRadius: 4,
                                 elevation: 5, }}>
                     <View style={{ flexDirection:'row'}}>
-                      <Text>{data.nomor} </Text>
-                      <Text>{data.nama}</Text>
+                      <Text style={{ fontSize:15, marginTop:10, marginBottom:5}}>{data.nomor} </Text>
+                      <Text style={{ fontSize:15, marginLeft:24 }}>{data.nama}</Text>
                     </View>
                     <View style={{ flexDirection:'row'}}>
-                      <Text>{data.type} | {data.ayat} Ayat</Text>
-                      <Text style={{ textAlign:'right', marginLeft:'auto'}}>{data.asma}</Text>
+                      <Text style={{marginLeft:35, fontSize:13, marginTop: -17}}>{data.type} | {data.ayat} Ayat</Text>
+                      <Text style={{ textAlign:'right', marginLeft:'auto', marginTop: -31, fontSize:22}}>{data.asma}</Text>
                     </View>
                 </View>
               </TouchableOpacity>   
