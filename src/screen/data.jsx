@@ -22,7 +22,6 @@ const data = () => {
   }, [])
   return (
     <View style={{ flex: 1, backgroundColor: 'white', padding:15}}>
-      <Text style={{ textAlign:'center'}}>Al-Quran Pintar</Text>
       <ScrollView>
           {dataQuran?.map((data, index) => {
             return (
