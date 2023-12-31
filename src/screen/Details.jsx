@@ -35,15 +35,15 @@ export default function Details ({route}) {
           {dataQuran?.map((data, index) => {
             return (
               <View 
-              style={styles.boxData}
+              
               key={index}>
-                <Text style={styles.data}>
+                <Text style={{  }}>
                {data.nomor}
                 </Text>
-                <Text style={styles.data}>
+                <Text style={{  }}>
                 {data.ar} 
                 </Text>
-                <Text style={styles.data}>
+                <Text style={{  }}>
                 {data.id}
                 </Text>
               </View>   
@@ -57,12 +57,3 @@ export default function Details ({route}) {
 
 
 
-const styles = StyleSheet.create({
-    data: {
-      fontSize: 21,
-      fontWeight: 'bold'
-    },
-    boxData: {
-      borderWidth: 1,
-    }
-  })

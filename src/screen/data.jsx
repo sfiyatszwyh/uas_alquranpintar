@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { useNavigation } from '@react-navigation/native';
 
@@ -23,12 +23,16 @@ const data = () => {
   return (
     <View style={{ flex: 1, backgroundColor: 'white', padding:15}}>
       <ScrollView>
+      <Image source={require('../images/tampil.jpg')} style={{height:100,
+          width:290,
+          borderRadius: 10
+     }}/>
           {dataQuran?.map((data, index) => {
             return (
               <TouchableOpacity 
               onPress={() => navigateToDetails(data.nomor)}
               key={index}>
-                <View style= {{ backgroundColor: '#FFFDD0',
+                <View style= {{ backgroundColor: '#D2B48C',
                                 borderRadius: 10,
                                 marginVertical: 10,
                                 padding: 20,
