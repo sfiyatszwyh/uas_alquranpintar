@@ -22,14 +22,14 @@ export default function Details ({route}) {
         
     }
   return (
-   <View style={{ flex: 1, backgroundColor: 'white', padding:15}}>
+   <View style={{ flex: 1, backgroundColor: '#FFEBCD', padding:15}}>
     <ScrollView >
       <View style={{ flexDirection:'row'}}>
         <TouchableOpacity style={{ flexDirection:'row'}} onPress={() => navigation.goBack()}>
             <Image source={require('../images/back.png')} style={{width:20, height:20}}/>
-            <Text >Back</Text>
+            <Text style={{ color: '#000000'}} >Back</Text>
         </TouchableOpacity>
-        <Text style={{ textAlign:'center', marginLeft:'auto'}}>Surah</Text>
+        <Text style={{ textAlign:'center', marginLeft:'auto', color: '#000000'}}>Surah</Text>
       </View>
         
           {dataQuran?.map((data, index) => {
@@ -37,13 +37,17 @@ export default function Details ({route}) {
               <View 
               
               key={index}>
-                <Text style={{  }}>
-               {data.nomor}
-                </Text>
-                <Text style={{  }}>
+                <Text style={{ fontSize: 20,
+                                textAlign: 'center',
+                                marginBottom: 10,
+                                marginTop: 15,
+                                color: '#000000' }}>
                 {data.ar} 
                 </Text>
-                <Text style={{  }}>
+                <Text style={{ fontSize: 15,
+                                textAlign: 'center',
+                                fontStyle: 'italic',
+                                 }}>
                 {data.id}
                 </Text>
               </View>   

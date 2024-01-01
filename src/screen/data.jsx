@@ -1,8 +1,8 @@
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { useNavigation } from '@react-navigation/native';
 
-const data = () => {
+const data = ({ navigation }) => {
   const navigations = useNavigation ()
   const [dataQuran, setDataQuran] = useState(null);
   const getData = async () => {
@@ -23,10 +23,17 @@ const data = () => {
   return (
     <View style={{ flex: 1, backgroundColor: 'white', padding:15}}>
       <ScrollView>
-      <Image source={require('../images/tampil.jpg')} style={{height:100,
+      <Image source={require('../images/baru.jpg')} style={{height:100,
           width:290,
-          borderRadius: 10
+          borderRadius: 10,
      }}/>
+     <View style={{ flexDirection:'row', paddingBottom:10, paddingTop:15}}>
+        <TouchableOpacity style={{ flexDirection:'row'}} onPress={() => navigation.goBack()}>
+            <Image source={require('../images/back.png')} style={{width:20, height:20}}/>
+            <Text style={{ color: '#000000'}} >Back</Text>
+        </TouchableOpacity>
+        <Text style={{ textAlign:'center', marginLeft:'auto', color: '#000000'}}>Al-Quran</Text>
+      </View>
           {dataQuran?.map((data, index) => {
             return (
               <TouchableOpacity 
@@ -45,12 +52,12 @@ const data = () => {
                                 shadowRadius: 4,
                                 elevation: 5, }}>
                     <View style={{ flexDirection:'row'}}>
-                      <Text style={{ fontSize:15, marginTop:10, marginBottom:5}}>{data.nomor} </Text>
-                      <Text style={{ fontSize:15, marginLeft:24 }}>{data.nama}</Text>
+                      <Text style={{ fontSize:15, marginTop:10, marginBottom:5,  color: '#000000'}}>{data.nomor} </Text>
+                      <Text style={{ fontSize:15, marginLeft:24, color: '#000000' }}>{data.nama}</Text>
                     </View>
                     <View style={{ flexDirection:'row'}}>
-                      <Text style={{marginLeft:35, fontSize:13, marginTop: -17}}>{data.type} | {data.ayat} Ayat</Text>
-                      <Text style={{ textAlign:'right', marginLeft:'auto', marginTop: -31, fontSize:22}}>{data.asma}</Text>
+                      <Text style={{marginLeft:35, fontSize:13, marginTop: -17, color: '#000000'}}>{data.type} | {data.ayat} Ayat</Text>
+                      <Text style={{ textAlign:'right', marginLeft:'auto', marginTop: -31, fontSize:22, color: '#000000'}}>{data.asma}</Text>
                     </View>
                 </View>
               </TouchableOpacity>   

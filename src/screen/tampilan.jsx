@@ -6,21 +6,21 @@ const tampilan = ({ navigation }) => {
 
         const timeout = setTimeout(() => {
 
-            navigation.replace('data');
+            navigation.replace('menu');
         }, 2000);
 
         return () => clearTimeout(timeout);
     }, [navigation]);
 
     return (
-        <View style={{ backgroundColor: 'white',
+        <View style={{ backgroundColor: '#FFEBCD',
                     flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center' }}>
             <Image style={{ width: 130,
                             height: 130,
-                            resizeMode: 'contain', }} source={require('../images/logo.png')} />
-            <Text style={{ fontSize: 12,  }}>Al-Quran Pintar</Text>
+                            resizeMode: 'contain', }} source={require('../images/lg.png')} />
+            <Text style={{ fontSize: 12, color:'#000000' }}>Al-Quran Pintar</Text>
         </View>
     );
 };
