@@ -53,7 +53,7 @@ const Asmaul = ({ navigation }) => {
                 borderRadius: 10,
                 elevation: 3, }} key={index}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#333', }}>{data.urutan}</Text>
-                <Text style={{ fontSize: 16, color: '#555', }}>{data.latin}</Text>
+                <Text style={{ fontSize: 16, color: '#555', fontStyle: 'italic',}}>{data.latin}</Text>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000', }}>{data.arab}</Text>
                 <Text style={{ fontSize: 15, color: '#777', fontStyle: 'italic',}}>{data.arti}</Text>
               </View>
@@ -67,7 +67,7 @@ const Asmaul = ({ navigation }) => {
                 borderRadius: 10,
                 elevation: 3, }} key={index}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#333', }}>{data.urutan}</Text>
-                <Text style={{ fontSize: 16, color: '#555', }}>{data.latin}</Text>
+                <Text style={{ fontSize: 16, color: '#555', fontStyle: 'italic', }}>{data.latin}</Text>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#000', }}>{data.arab}</Text>
                 <Text style={{ fontSize: 15, color: '#777', fontStyle: 'italic', }}>{data.arti}</Text>
               </View>
