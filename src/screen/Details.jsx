@@ -47,6 +47,7 @@ export default function Details ({route}) {
                 <Text style={{ fontSize: 15,
                                 textAlign: 'center',
                                 fontStyle: 'italic',
+                                color: '#000000'
                                  }}>
                 {data.id}
                 </Text>
