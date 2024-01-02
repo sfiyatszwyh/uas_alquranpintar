@@ -21,12 +21,17 @@ const data = ({ navigation }) => {
     getData();
   }, [])
   return (
-    <View style={{ flex: 1, backgroundColor: 'white', padding:15}}>
+    <View style={{ flex: 1, backgroundColor: 'white', padding:15, }}>
       <ScrollView>
-      <Image source={require('../images/baru.jpg')} style={{height:100,
-          width:290,
-          borderRadius: 10,
-     }}/>
+      <View style={{ flexDirection:'row', backgroundColor: '#ded0c1', borderRadius: 10,}}>
+          <Image style={{ width: 100,
+                                height: 100,
+                                resizeMode: 'contain',
+                                }} source={require('../images/lg.png')} />
+          <Text style={{ padding:10,  marginLeft:'auto', color: '#000000', fontWeight: 'bold', fontSize:24,textAlignVertical: 'center', textAlign: 'center'}}>Al-Quran Pintar</Text>
+      </View>
+      
+     
      <View style={{ flexDirection:'row', paddingBottom:10, paddingTop:15}}>
         <TouchableOpacity style={{ flexDirection:'row'}} onPress={() => navigation.goBack()}>
             <Image source={require('../images/back.png')} style={{width:20, height:20}}/>
